@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19E287" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Child" representedClassName=".Child" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="parent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Parent" inverseName="children" inverseEntity="Parent"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="name"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="Parent" representedClassName=".Parent" syncable="YES">
+        <relationship name="children" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Child" inverseName="parent" inverseEntity="Child"/>
+    </entity>
+    <elements>
+        <element name="Parent" positionX="-63" positionY="-18" width="128" height="58"/>
+        <element name="Child" positionX="-54" positionY="-9" width="128" height="73"/>
+    </elements>
+</model>
