@@ -18,6 +18,16 @@ class ParentObject: NSManagedObject {
         }
     }
 
-    var children: [ChildObject] = []
+    var children: [ChildObject] {
+        get {
+            let orderedSet = mutableOrderedSetValue(forKey: "children")
+            return orderedSet.array as! [ChildObject]
+        }
+        set {
+            let existing = mutableOrderedSetValue(forKey: "children")
+            existing.removeAllObjects()
+            existing.addObjects(from: newValue)
+        }
+    }
 
 }
