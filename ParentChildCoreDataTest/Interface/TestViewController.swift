@@ -4,12 +4,17 @@ import CoreData
 
 class TestViewController: UITableViewController {
 
-    var datasource: UITableViewDiffableDataSource<Int, Child>?
+    var datasource: UITableViewDiffableDataSource<Int, ChildObject>?
 
-    var parentObject: Parent?
+    var container = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer
+
+    var parentObject: ParentObject?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        guard let container = container else { fatalError() }
+        parentObject = ParentObject.shared(in: container.viewContext)
 
         datasource = UITableViewDiffableDataSource(tableView: tableView) { tableView, indexPath, child in
             let cell = tableView.dequeueReusableCell(withIdentifier: "Child", for: indexPath)
@@ -24,18 +29,33 @@ class TestViewController: UITableViewController {
     }
 
     func updateSnapshot() {
-        var snapshot = NSDiffableDataSourceSnapshot<Int, Child>()
+        var snapshot = NSDiffableDataSourceSnapshot<Int, ChildObject>()
         snapshot.appendSections([0])
         snapshot.appendItems(parentObject?.children ?? [])
         datasource?.apply(snapshot)
     }
 
     @IBAction func loadSample1() {
-
+        update(fromFileName: "Sample1")
     }
 
     @IBAction func loadSample2() {
-
+        update(fromFileName: "Sample2")
+    }
+    
+    private func update(fromFileName fileName: String) {
+        guard let context = container?.viewContext else { fatalError() }
+        do {
+            let url = Bundle.main.url(forResource: fileName, withExtension: "json")!
+            let data = try Data(contentsOf: url)
+            let decoder = JSONDecoder()
+            decoder.userInfo = [.managedObjectContext: context]
+            let children = try decoder.decode([ChildObject].self, from: data)
+            parentObject?.children = children
+            updateSnapshot()
+        } catch {
+            print("Error Updating: \(error.localizedDescription)")
+        }
     }
 
 }
