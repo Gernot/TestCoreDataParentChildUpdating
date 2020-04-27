@@ -31,7 +31,7 @@ class TestViewController: UITableViewController {
     func updateSnapshot() {
         var snapshot = NSDiffableDataSourceSnapshot<Int, ChildObject>()
         snapshot.appendSections([0])
-        print("Updating UI, having \(parentObject?.children.count) children in \(parentObject?.objectID)" )
+        //print("Updating UI, having \(parentObject?.children.count) children in \(parentObject?.objectID)" )
         snapshot.appendItems(parentObject?.children ?? [])
         datasource?.apply(snapshot)
     }
@@ -45,8 +45,6 @@ class TestViewController: UITableViewController {
     }
     
     private func update(fromFileName fileName: String) {
-        //let context = container!.viewContext
-        //context.perform {
         container?.performBackgroundTask { context in
             do {
                 context.mergePolicy = NSMergePolicy.mergeByPropertyObjectTrump
@@ -57,7 +55,7 @@ class TestViewController: UITableViewController {
                 let children = try decoder.decode([ChildObject].self, from: data)
                 let parent = ParentObject.shared(in: context)
                 parent.children = children
-                print("Just set \(parent.children.count) children to \(parent.objectID)")
+                //print("Just set \(parent.children.count) children to \(parent.objectID)")
                 try context.save()
                 DispatchQueue.main.async {
                     self.updateSnapshot()
