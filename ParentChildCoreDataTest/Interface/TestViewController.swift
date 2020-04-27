@@ -31,6 +31,7 @@ class TestViewController: UITableViewController {
     func updateSnapshot() {
         var snapshot = NSDiffableDataSourceSnapshot<Int, ChildObject>()
         snapshot.appendSections([0])
+        print("Updating UI, having \(parentObject?.children.count) children in \(parentObject?.objectID)" )
         snapshot.appendItems(parentObject?.children ?? [])
         datasource?.apply(snapshot)
     }
@@ -44,17 +45,27 @@ class TestViewController: UITableViewController {
     }
     
     private func update(fromFileName fileName: String) {
-        guard let context = container?.viewContext else { fatalError() }
-        do {
-            let url = Bundle.main.url(forResource: fileName, withExtension: "json")!
-            let data = try Data(contentsOf: url)
-            let decoder = JSONDecoder()
-            decoder.userInfo = [.managedObjectContext: context]
-            let children = try decoder.decode([ChildObject].self, from: data)
-            parentObject?.children = children
-            updateSnapshot()
-        } catch {
-            print("Error Updating: \(error.localizedDescription)")
+        //let context = container!.viewContext
+        //context.perform {
+        container?.performBackgroundTask { context in
+            do {
+                context.mergePolicy = NSMergePolicy.mergeByPropertyObjectTrump
+                let url = Bundle.main.url(forResource: fileName, withExtension: "json")!
+                let data = try Data(contentsOf: url)
+                let decoder = JSONDecoder()
+                decoder.userInfo = [.managedObjectContext: context]
+                let children = try decoder.decode([ChildObject].self, from: data)
+                let parent = ParentObject.shared(in: context)
+                parent.children = children
+                print("Just set \(parent.children.count) children to \(parent.objectID)")
+                try context.save()
+                DispatchQueue.main.async {
+                    self.updateSnapshot()
+                }
+            } catch {
+                context.reset()
+                print("Error Updating: \(error.localizedDescription)")
+            }
         }
     }
 
