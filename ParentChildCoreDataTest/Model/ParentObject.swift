@@ -60,4 +60,20 @@ class ParentObject: NSManagedObject {
         }
     }
 
+    func appendChildren(_ children: [ChildObject]) {
+        let set = mutableOrderedSetValue(forKey: "children")
+        set.addObjects(from: children)
+    }
+
+    func removeChildren(notIn childrenToKeep: [ChildObject]) {
+        let orderedSet = mutableOrderedSetValue(forKey: "children")
+        let typedSet = orderedSet.set as! Set<ChildObject>
+        let childrenToRemove = typedSet.filter { child in
+            childrenToKeep.contains(where: { child.name == $0.name }) == false
+        }
+        for child in childrenToRemove {
+            orderedSet.remove(child)
+        }
+    }
+
 }

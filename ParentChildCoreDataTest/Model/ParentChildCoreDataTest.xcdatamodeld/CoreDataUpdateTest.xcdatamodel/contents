@@ -10,7 +10,7 @@
         </uniquenessConstraints>
     </entity>
     <entity name="ParentObject" representedClassName=".ParentObject" syncable="YES">
-        <relationship name="children" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="ChildObject" inverseName="parent" inverseEntity="ChildObject"/>
+        <relationship name="children" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="ChildObject" inverseName="parent" inverseEntity="ChildObject"/>
     </entity>
     <elements>
         <element name="ChildObject" positionX="-54" positionY="-9" width="128" height="73"/>
