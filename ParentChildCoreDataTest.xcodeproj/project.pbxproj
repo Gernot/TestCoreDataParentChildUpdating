@@ -75,10 +75,10 @@
 				824BFA122457309900405B78 /* AppDelegate.swift */,
 				824BFA142457309900405B78 /* SceneDelegate.swift */,
 				82ACCA6124573F0000E9E571 /* CodingUserInfoKey.swift */,
+				82ACCA6524581FB700E9E571 /* ExperimentalMergePolicy.swift */,
 				824BFA1E2457309900405B78 /* Assets.xcassets */,
 				824BFA202457309900405B78 /* LaunchScreen.storyboard */,
 				824BFA232457309900405B78 /* Info.plist */,
-				82ACCA6524581FB700E9E571 /* ExperimentalMergePolicy.swift */,
 			);
 			path = ParentChildCoreDataTest;
 			sourceTree = "<group>";

@@ -60,7 +60,7 @@ class ParentObject: NSManagedObject {
         }
     }
 
-    func appendChildren(_ children: [ChildObject]) {
+    func addChildren(_ children: [ChildObject]) {
         let set = mutableOrderedSetValue(forKey: "children")
         set.addObjects(from: children)
     }
