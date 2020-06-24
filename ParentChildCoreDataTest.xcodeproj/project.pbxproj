@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		822235C024A3DA220027BA26 /* NSMergePolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822235BF24A3DA220027BA26 /* NSMergePolicy.swift */; };
 		824BFA132457309900405B78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824BFA122457309900405B78 /* AppDelegate.swift */; };
 		824BFA152457309900405B78 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824BFA142457309900405B78 /* SceneDelegate.swift */; };
 		824BFA1A2457309900405B78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 824BFA182457309900405B78 /* Main.storyboard */; };
@@ -19,10 +20,10 @@
 		82ACCA5F24573DED00E9E571 /* Sample1.json in Resources */ = {isa = PBXBuildFile; fileRef = 82ACCA5E24573DED00E9E571 /* Sample1.json */; };
 		82ACCA6224573F0000E9E571 /* CodingUserInfoKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82ACCA6124573F0000E9E571 /* CodingUserInfoKey.swift */; };
 		82ACCA63245741F700E9E571 /* Sample2.json in Resources */ = {isa = PBXBuildFile; fileRef = 82ACCA6024573E3500E9E571 /* Sample2.json */; };
-		82ACCA6624581FB700E9E571 /* ExperimentalMergePolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82ACCA6524581FB700E9E571 /* ExperimentalMergePolicy.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		822235BF24A3DA220027BA26 /* NSMergePolicy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSMergePolicy.swift; sourceTree = "<group>"; };
 		824BFA0F2457309900405B78 /* ParentChildCoreDataTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParentChildCoreDataTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		824BFA122457309900405B78 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		824BFA142457309900405B78 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,7 +38,6 @@
 		82ACCA5E24573DED00E9E571 /* Sample1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Sample1.json; sourceTree = "<group>"; };
 		82ACCA6024573E3500E9E571 /* Sample2.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Sample2.json; sourceTree = "<group>"; };
 		82ACCA6124573F0000E9E571 /* CodingUserInfoKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodingUserInfoKey.swift; sourceTree = "<group>"; };
-		82ACCA6524581FB700E9E571 /* ExperimentalMergePolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperimentalMergePolicy.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,7 +75,7 @@
 				824BFA122457309900405B78 /* AppDelegate.swift */,
 				824BFA142457309900405B78 /* SceneDelegate.swift */,
 				82ACCA6124573F0000E9E571 /* CodingUserInfoKey.swift */,
-				82ACCA6524581FB700E9E571 /* ExperimentalMergePolicy.swift */,
+				822235BF24A3DA220027BA26 /* NSMergePolicy.swift */,
 				824BFA1E2457309900405B78 /* Assets.xcassets */,
 				824BFA202457309900405B78 /* LaunchScreen.storyboard */,
 				824BFA232457309900405B78 /* Info.plist */,
@@ -182,9 +182,9 @@
 				824BFA30245730AB00405B78 /* ParentChildCoreDataTest.xcdatamodeld in Sources */,
 				824BFA132457309900405B78 /* AppDelegate.swift in Sources */,
 				824BFA2E245730AB00405B78 /* ChildObject.swift in Sources */,
+				822235C024A3DA220027BA26 /* NSMergePolicy.swift in Sources */,
 				824BFA152457309900405B78 /* SceneDelegate.swift in Sources */,
 				824BFA2F245730AB00405B78 /* ParentObject.swift in Sources */,
-				82ACCA6624581FB700E9E571 /* ExperimentalMergePolicy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -47,7 +47,7 @@ class TestViewController: UITableViewController {
         container?.performBackgroundTask { context in
             do {
                 //context.mergePolicy = NSMergePolicy.mergeByPropertyObjectTrump
-                context.mergePolicy = ExperimentalMergePolicy(merge: .mergeByPropertyObjectTrumpMergePolicyType)
+                context.mergePolicy = NSMergePolicy.resortingMergeByPropertyObjectTrump
                 let url = Bundle.main.url(forResource: fileName, withExtension: "json")!
                 let data = try Data(contentsOf: url)
                 let decoder = JSONDecoder()
