@@ -2,7 +2,7 @@ import Foundation
 import UIKit
 import CoreData
 
-class TestViewController: UITableViewController {
+class OrderedSetMergeViewController: UITableViewController {
 
     var datasource: UITableViewDiffableDataSource<Int, ChildObject>?
 

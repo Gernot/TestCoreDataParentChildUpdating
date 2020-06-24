@@ -16,7 +16,7 @@
 		824BFA2E245730AB00405B78 /* ChildObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824BFA2A245730AB00405B78 /* ChildObject.swift */; };
 		824BFA2F245730AB00405B78 /* ParentObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824BFA2B245730AB00405B78 /* ParentObject.swift */; };
 		824BFA30245730AB00405B78 /* ParentChildCoreDataTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 824BFA2C245730AB00405B78 /* ParentChildCoreDataTest.xcdatamodeld */; };
-		82ACCA5D2457315F00E9E571 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82ACCA5C2457315F00E9E571 /* TestViewController.swift */; };
+		82ACCA5D2457315F00E9E571 /* OrderedSetMergeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82ACCA5C2457315F00E9E571 /* OrderedSetMergeViewController.swift */; };
 		82ACCA5F24573DED00E9E571 /* Sample1.json in Resources */ = {isa = PBXBuildFile; fileRef = 82ACCA5E24573DED00E9E571 /* Sample1.json */; };
 		82ACCA6224573F0000E9E571 /* CodingUserInfoKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82ACCA6124573F0000E9E571 /* CodingUserInfoKey.swift */; };
 		82ACCA63245741F700E9E571 /* Sample2.json in Resources */ = {isa = PBXBuildFile; fileRef = 82ACCA6024573E3500E9E571 /* Sample2.json */; };
@@ -34,7 +34,7 @@
 		824BFA2A245730AB00405B78 /* ChildObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChildObject.swift; sourceTree = "<group>"; };
 		824BFA2B245730AB00405B78 /* ParentObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParentObject.swift; sourceTree = "<group>"; };
 		824BFA2D245730AB00405B78 /* CoreDataUpdateTest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataUpdateTest.xcdatamodel; sourceTree = "<group>"; };
-		82ACCA5C2457315F00E9E571 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		82ACCA5C2457315F00E9E571 /* OrderedSetMergeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderedSetMergeViewController.swift; sourceTree = "<group>"; };
 		82ACCA5E24573DED00E9E571 /* Sample1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Sample1.json; sourceTree = "<group>"; };
 		82ACCA6024573E3500E9E571 /* Sample2.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Sample2.json; sourceTree = "<group>"; };
 		82ACCA6124573F0000E9E571 /* CodingUserInfoKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodingUserInfoKey.swift; sourceTree = "<group>"; };
@@ -99,7 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				824BFA182457309900405B78 /* Main.storyboard */,
-				82ACCA5C2457315F00E9E571 /* TestViewController.swift */,
+				82ACCA5C2457315F00E9E571 /* OrderedSetMergeViewController.swift */,
 			);
 			path = Interface;
 			sourceTree = "<group>";
@@ -178,7 +178,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				82ACCA6224573F0000E9E571 /* CodingUserInfoKey.swift in Sources */,
-				82ACCA5D2457315F00E9E571 /* TestViewController.swift in Sources */,
+				82ACCA5D2457315F00E9E571 /* OrderedSetMergeViewController.swift in Sources */,
 				824BFA30245730AB00405B78 /* ParentChildCoreDataTest.xcdatamodeld in Sources */,
 				824BFA132457309900405B78 /* AppDelegate.swift in Sources */,
 				824BFA2E245730AB00405B78 /* ChildObject.swift in Sources */,
