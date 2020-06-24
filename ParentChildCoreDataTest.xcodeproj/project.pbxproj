@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		822235C024A3DA220027BA26 /* NSMergePolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822235BF24A3DA220027BA26 /* NSMergePolicy.swift */; };
+		822235C324A3DDAD0027BA26 /* SingleRelationshipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822235C224A3DDAD0027BA26 /* SingleRelationshipViewController.swift */; };
+		822235C424A3E0630027BA26 /* Single.json in Resources */ = {isa = PBXBuildFile; fileRef = 822235C124A3DD7B0027BA26 /* Single.json */; };
 		824BFA132457309900405B78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824BFA122457309900405B78 /* AppDelegate.swift */; };
 		824BFA152457309900405B78 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824BFA142457309900405B78 /* SceneDelegate.swift */; };
 		824BFA1A2457309900405B78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 824BFA182457309900405B78 /* Main.storyboard */; };
@@ -24,6 +26,8 @@
 
 /* Begin PBXFileReference section */
 		822235BF24A3DA220027BA26 /* NSMergePolicy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSMergePolicy.swift; sourceTree = "<group>"; };
+		822235C124A3DD7B0027BA26 /* Single.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Single.json; sourceTree = "<group>"; };
+		822235C224A3DDAD0027BA26 /* SingleRelationshipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleRelationshipViewController.swift; sourceTree = "<group>"; };
 		824BFA0F2457309900405B78 /* ParentChildCoreDataTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParentChildCoreDataTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		824BFA122457309900405B78 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		824BFA142457309900405B78 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -89,8 +93,9 @@
 				824BFA2A245730AB00405B78 /* ChildObject.swift */,
 				824BFA2B245730AB00405B78 /* ParentObject.swift */,
 				824BFA2C245730AB00405B78 /* ParentChildCoreDataTest.xcdatamodeld */,
-				82ACCA6024573E3500E9E571 /* Sample2.json */,
 				82ACCA5E24573DED00E9E571 /* Sample1.json */,
+				82ACCA6024573E3500E9E571 /* Sample2.json */,
+				822235C124A3DD7B0027BA26 /* Single.json */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -100,6 +105,7 @@
 			children = (
 				824BFA182457309900405B78 /* Main.storyboard */,
 				82ACCA5C2457315F00E9E571 /* OrderedSetMergeViewController.swift */,
+				822235C224A3DDAD0027BA26 /* SingleRelationshipViewController.swift */,
 			);
 			path = Interface;
 			sourceTree = "<group>";
@@ -165,6 +171,7 @@
 				824BFA222457309900405B78 /* LaunchScreen.storyboard in Resources */,
 				82ACCA63245741F700E9E571 /* Sample2.json in Resources */,
 				824BFA1F2457309900405B78 /* Assets.xcassets in Resources */,
+				822235C424A3E0630027BA26 /* Single.json in Resources */,
 				824BFA1A2457309900405B78 /* Main.storyboard in Resources */,
 				82ACCA5F24573DED00E9E571 /* Sample1.json in Resources */,
 			);
@@ -185,6 +192,7 @@
 				822235C024A3DA220027BA26 /* NSMergePolicy.swift in Sources */,
 				824BFA152457309900405B78 /* SceneDelegate.swift in Sources */,
 				824BFA2F245730AB00405B78 /* ParentObject.swift in Sources */,
+				822235C324A3DDAD0027BA26 /* SingleRelationshipViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -46,8 +46,8 @@ class OrderedSetMergeViewController: UITableViewController {
     private func update(fromFileName fileName: String) {
         container?.performBackgroundTask { context in
             do {
-                //context.mergePolicy = NSMergePolicy.mergeByPropertyObjectTrump
-                context.mergePolicy = NSMergePolicy.resortingMergeByPropertyObjectTrump
+                context.mergePolicy = NSMergePolicy.mergeByPropertyObjectTrump
+                //context.mergePolicy = NSMergePolicy.resortingMergeByPropertyObjectTrump
                 let url = Bundle.main.url(forResource: fileName, withExtension: "json")!
                 let data = try Data(contentsOf: url)
                 let decoder = JSONDecoder()
