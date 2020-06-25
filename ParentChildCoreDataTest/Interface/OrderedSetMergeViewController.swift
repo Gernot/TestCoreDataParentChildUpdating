@@ -46,16 +46,25 @@ class OrderedSetMergeViewController: UITableViewController {
     private func update(fromFileName fileName: String) {
         container?.performBackgroundTask { context in
             do {
+                
+                /** See the default merge policy messing with the order in an OrderedSet. Replace that by the `resortingMergeByPropertyObjectTrump` merge policy to see how this issue is fixed during the merge. */
                 context.mergePolicy = NSMergePolicy.mergeByPropertyObjectTrump
                 //context.mergePolicy = NSMergePolicy.resortingMergeByPropertyObjectTrump
+                
                 let url = Bundle.main.url(forResource: fileName, withExtension: "json")!
                 let data = try Data(contentsOf: url)
                 let decoder = JSONDecoder()
                 decoder.userInfo = [.managedObjectContext: context]
                 let children = try decoder.decode([ChildObject].self, from: data)
                 let parent = ParentObject.shared(in: context)
+                
+                /** Here the new Children are added to the existing ones, afterwards the objects in the OrderedSet are removed that are *not* shaing the "name" constraint. This way, before the merge, the new objects *and their duplicates* are present, the duplicates will be removed by the merge. If they are removed before, e.g. by setting them directly, the deletion rules are fired, leading to deletion of the resolved objects, too.*/
                 parent.addChildren(children)
                 parent.removeChildren(notIn: children)
+                
+                /** Use this instead of the add/remove above to see the deletion issue */
+                //parent.children = children
+
                 try context.save()
                 DispatchQueue.main.async {
                     self.updateSnapshot()

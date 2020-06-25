@@ -22,6 +22,8 @@ class ParentObject: NSManagedObject {
         get {
             let orderedSet = mutableOrderedSetValue(forKey: "children")
             return orderedSet.array as! [ChildObject]
+        } set {
+            setValue(NSOrderedSet(array: newValue), forKey: "children")
         }
     }
 
