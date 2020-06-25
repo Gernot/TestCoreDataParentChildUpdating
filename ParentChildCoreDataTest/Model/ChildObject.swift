@@ -25,5 +25,7 @@ class ChildObject: NSManagedObject, Decodable {
     }
 
     @NSManaged var name: String
+    
+    @NSManaged var singleParent: ParentObject?
 
 }

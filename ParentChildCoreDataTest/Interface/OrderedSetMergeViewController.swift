@@ -2,7 +2,7 @@ import Foundation
 import UIKit
 import CoreData
 
-class TestViewController: UITableViewController {
+class OrderedSetMergeViewController: UITableViewController {
 
     var datasource: UITableViewDiffableDataSource<Int, ChildObject>?
 
@@ -31,7 +31,6 @@ class TestViewController: UITableViewController {
     func updateSnapshot() {
         var snapshot = NSDiffableDataSourceSnapshot<Int, ChildObject>()
         snapshot.appendSections([0])
-        print("Updating UI, having \(parentObject?.children.count) children in \(parentObject?.objectID)" )
         snapshot.appendItems(parentObject?.children ?? [])
         datasource?.apply(snapshot)
     }
@@ -45,19 +44,18 @@ class TestViewController: UITableViewController {
     }
     
     private func update(fromFileName fileName: String) {
-        //let context = container!.viewContext
-        //context.perform {
         container?.performBackgroundTask { context in
             do {
                 context.mergePolicy = NSMergePolicy.mergeByPropertyObjectTrump
+                //context.mergePolicy = NSMergePolicy.resortingMergeByPropertyObjectTrump
                 let url = Bundle.main.url(forResource: fileName, withExtension: "json")!
                 let data = try Data(contentsOf: url)
                 let decoder = JSONDecoder()
                 decoder.userInfo = [.managedObjectContext: context]
                 let children = try decoder.decode([ChildObject].self, from: data)
                 let parent = ParentObject.shared(in: context)
-                parent.children = children
-                print("Just set \(parent.children.count) children to \(parent.objectID)")
+                parent.addChildren(children)
+                parent.removeChildren(notIn: children)
                 try context.save()
                 DispatchQueue.main.async {
                     self.updateSnapshot()
